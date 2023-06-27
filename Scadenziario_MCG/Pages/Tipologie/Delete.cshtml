@@ -1,0 +1,16 @@
+﻿@page
+@using System.Data.SqlClient
+@{
+    string CTS = Request.Query["CodiceTipologiaScadenza"];
+    string connessione = "Server=DESKTOP-UOEE9EA\\SQLEXPRESS; Database=Scadenziario; Trusted_connection=true";
+    SqlConnection conn = new SqlConnection(connessione);
+    conn.Open();
+    SqlCommand cmd = new SqlCommand();
+    //PROBLEMA ERRORE VALORE SCALARE DA DICHIARARE, CHIEDERE A MASSIMILIANO 
+    cmd.CommandText = "DELETE Scadenze WHERE CodiceTipologiaScadenza=@CodiceTipologiaScadenza";
+    cmd.Parameters.AddWithValue("CodiceTipologiaScadenza", CTS );
+    cmd.Connection = conn;
+    cmd.ExecuteNonQuery();
+    conn.Close();
+    Response.Redirect("/Tipologie/Index");
+}

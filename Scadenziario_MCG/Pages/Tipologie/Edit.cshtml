@@ -1,0 +1,55 @@
+﻿@page
+@model Scadenziario_MCG.Pages.Tipologie.EditModel
+@{
+}
+
+<form method="post">
+    <div class="container">
+        <div class="row">
+            <h3>Aggiungi Nuova Registrazione </h3>
+             @foreach (var item in Model.Scadenzes)
+                    {
+            <label>Codice Tipologia Scadenza</label>
+            <input name="textboxCTS" value="@item.CodiceTipologiaScadenza" class="form form-control text-muted m-2">
+
+            <label>Descrizione Tipologia</label>
+            <input name="textboxDT" value="@item.DescrizioneTipologia" class="form form-control text-muted m-2">
+
+            <label>Tipo Anagrafica</label>
+                <input name="textboxTAna" value="@item.TipoAnagrafica" class="form form-control text-muted m-2">
+
+            <label>Gruppo</label>
+                <input name="textboxGruppo" value="@item.Gruppo" class="form form-control text-muted m-2">
+
+            <label>Anagrafica</label>
+                <input name="textboxAna" value="@item.Anagrafica" class="form form-control text-muted m-2">
+
+            <label>Manutenzione Macchina</label>
+                <input name="textboxManut" value="@item.ManutenzioneMacchina" class="form form-control text-muted m-2">
+
+            <label> Avviso Scadenza</label>
+                <input name="textboxAS" value="@item.AvvisoScadenza" class="form form-control text-muted m-2">
+
+            <label>Avviso Invio Email</label>
+                <input name="textboxAIE" value="@item.AvvisoInvioEmail" class="form form-control text-muted m-2">
+
+            <label>Mittente Nome</label>
+                <input name="textboxMN" value="@item.MittenteNome" class="form form-control text-muted m-2">
+
+            <label>Mittente Indirizzo</label>
+                <input name="textboxMI" value="@item.MittenteIndirizzo" class="form form-control text-muted m-2">
+
+            <label>Testo Email</label>
+                <input name="textboxTE" value="@item.TestoEmail" class="form form-control text-muted m-2">
+
+            <label>Ricorrente</label>
+                <input name="textboxRR" value="@item.Ricorrente" class="form form-control text-muted m-2">
+
+            <label>Formula Rinnovo Scadenza</label>
+                <input name="textboxFRS" value="@item.FormulaRinnovoScadenza" class="form form-control text-muted m-2">
+
+            }
+            <button class="btn btn-small btn-ouline-success m-2">Aggiungi</button>
+        </div>
+    </div>
+</form>
