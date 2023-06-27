@@ -1,0 +1,54 @@
+﻿@page
+@model Scadenziario_MCG.Pages.Tipologie.IndexModel
+@{
+}
+<div class="container">
+    <div class="row">
+        <table class="table table-striped" style="font-size: 12px">
+            <thead>
+                <tr>
+                    <th><a href="/Tipologie/Insert" class="btn btn-small btn-success">+</a></th>
+                </tr>
+                <tr>
+                    <th>Codice Tipologia Scadenza</th>
+                    <th>Descrizione Tipologia</th>
+                    <th>Tipo Anagrafica</th>
+                    <th>Gruppo</th>
+                    <th>Anagrafica</th>
+                    <th>Manutenzione Macchina </th>
+                    <th>Avviso Scadenza</th>
+                    <th>Avviso Invio Email</th>
+                    <th>Mittente Nome </th>
+                    <th>Mittente Indirizzo</th>
+                    <th>Testo Email</th>
+                    <th>Ricorrente</th>
+                    <th>Formula Rinnovo Scadenza</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Scadenzes)
+                {
+                    <tr>
+                        <td>@item.CodiceTipologiaScadenza</td>
+                        <td>@item.DescrizioneTipologia</td>
+                        <td>@item.TipoAnagrafica</td>
+                        <td>@item.Gruppo</td>
+                        <td>@item.Anagrafica</td>
+                        <td>@item.ManutenzioneMacchina</td>
+                        <td>@item.AvvisoScadenza</td>
+                        <td>@item.AvvisoInvioEmail</td>
+                        <td>@item.MittenteNome</td>
+                        <td>@item.MittenteIndirizzo</td>
+                        <td>@item.TestoEmail</td>
+                        <td>@item.Ricorrente</td>
+                        <td>@item.FormulaRinnovoScadenza</td>
+                        <td><a href="/Tipologie/Edit?id=@item.CodiceTipologiaScadenza" class="btn btn-small btn-primary">Edit</a></td>
+                        <td><a href="/Tipologie/Delete?id=@item.CodiceTipologiaScadenza" class="btn btn-small btn-danger">Delete</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
